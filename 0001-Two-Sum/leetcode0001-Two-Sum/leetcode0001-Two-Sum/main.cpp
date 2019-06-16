@@ -62,8 +62,8 @@ void  printVec(const vector<int> &num_vec){
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    const int numbers[] = {0,3,2,0};
-    int target = 0;
+    const int numbers[] = {3,3};
+    int target = 6;
     
     vector<int> nums_vec(numbers, numbers + sizeof(numbers)/ sizeof(int));
     vector<int> resultBF = Solution().twoSumBF(nums_vec, target);
