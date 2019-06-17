@@ -62,12 +62,13 @@ public struct Heap <T> {
         return (index - 1) / 2;
     }
     
-    /// 确保 父节点要比所有的子节点小或者打
+    /// 堆化 从下往上
     ///
     /// - Parameter index: <#index description#>
     internal mutating func shiftDown(_ index:Int) {
         shiftDown(from: index, util: nodes.count)
     }
+    
     
     internal mutating func shiftDown(from index:Int ,util endIndex:Int ) {
         // 获取左右节点
@@ -77,19 +78,22 @@ public struct Heap <T> {
         // 判断是升序还是降序
         var first = index
         
-        //
+        // 子节点的键值或者索引总是大于或者小于其父节点
         if leftChildIndex < endIndex && orderCriteria(nodes[leftChildIndex],nodes[first]) {
             first = leftChildIndex
         }
         
-        //
+        // 子节点的键值或者索引总是大于或者小于其父节点
         if rightChildIndex < endIndex && orderCriteria(nodes[rightChildIndex],nodes[first]) {
             first = rightChildIndex
         }
         
+        // 符合直接返回
         if first == index { return }
         
+        // 交换
         nodes.swapAt(first, index)
+        // 再次从 不符合的子节点索引处
         shiftDown(from: first, util: endIndex)
     }
     
