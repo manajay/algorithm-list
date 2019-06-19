@@ -37,6 +37,7 @@ public struct Heap <T> {
     private mutating func configHeap(from array:[T]){
         nodes = array
         // stride 中间索引, 生成全闭区间数组索引
+        // 从 二叉树的 (nodes.count/2 - 1) 一边的最后一个节点开始
         for i in stride(from: (nodes.count/2 - 1), through: 0, by: -1) {
             // 堆化
             shiftDown(i)
@@ -69,7 +70,7 @@ public struct Heap <T> {
         shiftDown(from: index, util: nodes.count)
     }
     
-    
+    /// 每次最多只交换一个节点, 递归调用 shiftDown 时,会略过其左子节点或者右子节点
     internal mutating func shiftDown(from index:Int ,util endIndex:Int ) {
         // 获取左右节点
         let leftChildIndex = self.leftChildIndex(index)
