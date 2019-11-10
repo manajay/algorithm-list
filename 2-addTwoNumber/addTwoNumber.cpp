@@ -46,7 +46,7 @@ public:
         int nextV = 0;
         int currentV = 0;
         while (l1 != NULL || l2 != NULL || nextV > 0){
-            if(l1 != NULL && l2 != NULL){ // 都不为空
+            if (l1 != NULL && l2 != NULL){ // 都不为空
                 currentV = nextV + l1->val + l2->val;
 
                 l1 = l1->next;
@@ -66,7 +66,7 @@ public:
             nextV = currentV >= 10 ? 1 : 0;
             currentV = currentV % 10;
             
-            current->next = new ListNode(currentV);
+            current -> next = new ListNode(currentV);
             current = current->next;
         }
         
@@ -109,7 +109,7 @@ ListNode* stringToListNode(string input) {
     // Now convert that list into linked list
     ListNode* dummyRoot = new ListNode(0);
     ListNode* ptr = dummyRoot;
-    for(int item : list) {
+    for (int item : list) {
         ptr->next = new ListNode(item);
         ptr = ptr->next;
     }
@@ -139,7 +139,7 @@ int main () {
      * 
     */
     string line;
-    while(getline(cin,line)){
+    while (getline(cin,line)) {
         ListNode *node1 = stringToListNode(line);
         getline(cin,line);
         ListNode *node2 = stringToListNode(line);

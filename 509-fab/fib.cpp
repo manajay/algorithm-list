@@ -52,7 +52,7 @@ public:
         vector<int> cache;
         cache.push_back(0);
         cache.push_back(1);
-        while (index <= num){
+        while (index <= num) {
             int next = cache[index] + cache[index + 1];
             cache.push_back(next);
             index++;

@@ -30,8 +30,8 @@ public class TowSum {
         for (int i = 0; i < nums.length; i++) {
             int other = target - nums[i];
             Integer num = hashMap.get(other);
-            if (num != null){
-                if (i <= num){
+            if (num != null) {
+                if (i <= num) {
                     ret[0] = i;
                     ret[1] = num;
                 } else {
@@ -47,7 +47,7 @@ public class TowSum {
         return ret;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int nums[] =  {3,3};
         int target = 6;
         int[] solution = TowSum.solution(nums, target);
