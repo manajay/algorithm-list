@@ -84,17 +84,18 @@ public:
 
 int main () {
     int n , m ;
-    while (cin >> n >> m) {
+	// cin io 耗时较多, 可以用 scanf
+    while (~scanf("%d%d",&n,&m)) {
         vector<int> nums1;
         int temp;
         for (int i = 0 ; i < n; i ++) {
-            cin >> temp;
+            scanf("%d",&temp);
             nums1.push_back(temp);
         }
 
         vector<int> nums2;
         for (int i = 0 ; i < m; i ++) {
-            cin >> temp;
+            scanf("%d",&temp);
             nums2.push_back(temp);
         }
         double ret = Solution().findMedianSortedArrays(nums1,nums2); 
