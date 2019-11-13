@@ -1,5 +1,11 @@
-# algorithm-list
+# 算法学习
 Learn algorithm and apply it!
+
+## 目录结构
+
+- practice 用于平时的练习
+- geekbang-60d-algorithm 用于 极客大学的60天算法训练营
+- 
 
 ## 环境配置
 
