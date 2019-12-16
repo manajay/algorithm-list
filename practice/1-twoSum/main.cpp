@@ -18,9 +18,9 @@ using namespace std;
  You may assume that each input would have exactly one solution, and you may not use the same element twice.
  */
 
-class Solution {
+class Solution
+{
 public:
-    
     /**
      暴力方式 Brute Force
      时间复杂度: O(n^2) for 循环内嵌 for 循环
@@ -30,10 +30,14 @@ public:
      @param target 目标
      @return 输出
      */
-    vector<int> twoSumBF(vector<int>& nums, int target) {
-        for (int i = 0 ; i < nums.size() ; i ++) {
-            for (int j = i + 1 ; j < nums.size() ; j ++) {
-                if (nums[i] + nums[i] == target) {
+    vector<int> twoSumBF(vector<int> &nums, int target)
+    {
+        for (int i = 0; i < nums.size(); i++)
+        {
+            for (int j = i + 1; j < nums.size(); j++)
+            {
+                if (nums[i] + nums[i] == target)
+                {
                     int res[] = {i, j};
                     return vector<int>(res, res + 2);
                 }
@@ -41,33 +45,26 @@ public:
         }
         throw invalid_argument("无效数组输入");
     }
-    
-    vector<int> twoSumHashTableOne(vector<int>& nums, int target) {
-        
-        return vector<int>();
-    }
-    
-    vector<int> twoSumHashTableTwo(vector<int>& nums, int target) {
-        
-        return vector<int>();
-    }
 };
 
-void  printVec(const vector<int> &num_vec){
-    for (int num : num_vec) {
+void printVec(const vector<int> &num_vec)
+{
+    for (int num : num_vec)
+    {
         cout << num << " ";
     }
     cout << endl;
 }
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[])
+{
     // insert code here...
-    const int numbers[] = {3,3};
+    const int numbers[] = {3, 3};
     int target = 6;
-    
-    vector<int> nums_vec(numbers, numbers + sizeof(numbers)/ sizeof(int));
+
+    vector<int> nums_vec(numbers, numbers + sizeof(numbers) / sizeof(int));
     vector<int> resultBF = Solution().twoSumBF(nums_vec, target);
     printVec(resultBF);
-    
+
     return 0;
 }

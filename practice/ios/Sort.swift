@@ -153,7 +153,48 @@ struct Sort {
         
         return quicksort(less) + equal + quicksort(greater)
     }
+
+    /*
+    * 分割 , 返回 pivot 点
+    */
+    static func partitionLomuto<T:Comparable>(_ a:[T], left: Int , right: Int) -> Int {
+        let pivot = getPivot(_ a[T]);
+        let pivot = a[high]
+        var i = low
+        for j in low..<high {
+            if a[j] <= pivot {
+            (a[i], a[j]) = (a[j], a[i])
+            i += 1
+            }
+        }
+
+        (a[i], a[high]) = (a[high], a[i])
+        return min + 1
+    }
+
+    static func getPivot(_ arr:[T], left: Int , right: Int) -> Int {
+        return right
+    }
     
+
+    func partitionHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) -> Int {
+        let pivot = a[low]
+        var i = low - 1
+        var j = high + 1
+
+        // 两层while
+        while true {
+            // 内层while
+            repeat { j -= 1 } while a[j] > pivot
+            repeat { i += 1 } while a[i] < pivot
+
+            if i < j {
+            a.swapAt(i, j)
+            } else {
+            return j
+            }
+        }
+    }
     @discardableResult static func heapSort<T: Comparable> (_ a:[T]) -> [T] {
         guard a.count > 1 else {return a}
         print("heapSort input: \(a)")
