@@ -73,6 +73,7 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "unordered_set": "cpp"
     }
 }

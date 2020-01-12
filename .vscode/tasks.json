@@ -1,42 +1,39 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "build",
-            "command": "/usr/bin/clang++",
-            "args": [
-                "-std=c++11",
-                "-stdlib=libc++",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                "--debug",
-                "-g",
-                "-v"
-                // "${fileDirname}/${fileBasenameNoExtension}"
-            ],
-            "options": {
-                "cwd": "/usr/bin"
-            },
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "build",
+      "command": "clang++",
+      "args": [
+        "-g",
+        "-std=c++11",
+        "-stdlib=libc++",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "--debug",
+        "-v",
+        "--debug"
+      ],
+      "options": {
+        "cwd": "/usr/bin"
+      },
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
         }
-    ]
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
 }

@@ -183,7 +183,7 @@ int main(int argc, char **argv)
     for (auto arr : arrs)
     {
         printArr(arr);
-        cout << SolutionN().trap(arr) << endl;
+        cout << Solution().trap(arr) << endl;
     }
     return -1;
 }

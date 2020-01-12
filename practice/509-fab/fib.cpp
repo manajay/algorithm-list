@@ -36,7 +36,6 @@ F(N) = F(N - 1) + F(N - 2), 其中 N > 1.
  * 
 */
 
-
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -45,14 +44,17 @@ using namespace std;
  * 忽略大数问题, 大数可以使用字符串处理 ()
  * 
 */
-class Solution {
+class Solution
+{
 public:
-    int fib(int num) {
-         int index = 0;
+    int fib(int num)
+    {
+        int index = 0;
         vector<int> cache;
         cache.push_back(0);
         cache.push_back(1);
-        while (index <= num) {
+        while (index <= num)
+        {
             int next = cache[index] + cache[index + 1];
             cache.push_back(next);
             index++;
@@ -61,8 +63,9 @@ public:
     }
 };
 
-int main(){
-    int ret = Solution().fib(10);
+int main()
+{
+    int ret = Solution().fib(30);
     cout << "fib 10 = " << ret << endl;
     return 0;
 }

@@ -2,26 +2,51 @@
   "version": "2.0.0",
   "configurations": [
     {
-      "name": "C++ Launch",
-      "type": "cppdbg",
+      "name": "Debug",
+      "type": "lldb",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
       "preLaunchTask": "build",
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
+
+/**
+
+            "name": "lldb123",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/helloworld.out",
+            "args": []
+        }
+*/
+
+/**
+,
+    {
+      "name": "C++ DEBUG",
+      "type": "cppdbg",
+      // "type": "lldb",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      // "preLaunchTask": "build",
       "internalConsoleOptions": "openOnSessionStart",
       "logging": {
         "moduleLoad": false,
         "programOutput": true,
-        "trace": false
+        "trace": true,
+        "traceResponse": true,
+        "engineLogging": true
       },
       "showDisplayString": false,
       "args": [],
-      "stopAtEntry": false,
-      "cwd": "${workspaceRoot}",
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": true, // set true to enable keyboard input
-      "osx": {
-        "MIMode": "lldb"
-      }
+      "MIMode": "lldb",
+      "miDebuggerPath": "/Users/manajay/.vscode/extensions/ms-vscode.cpptools-0.26.3-insiders2/debugAdapters/lldb/bin/lldb-mi"
     }
-  ]
-}
+*/
